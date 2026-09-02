@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="WpfButtonsApp/WpfButtonsApp.csproj" />
+  <Project Path="WpfCheckRadioApp/WpfCheckRadioApp.csproj" />
+  <Project Path="WpfItemsControlsApp/WpfItemsControlsApp.csproj" />
+  <Project Path="WpfTextElementsApp/WpfTextElementsApp.csproj" />
+</Solution>

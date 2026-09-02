@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfCheckRadioApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCheckRadioApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <CheckBox Content="Have Dog"
+                  FontSize="30"
+                  Foreground="Red"
+                  IsThreeState="False"
+                  IsChecked="False"
+                  Checked="CheckBox_Checked"
+                  Unchecked="CheckBox_Unchecked"
+                  Indeterminate="CheckBox_Indeterminate"/>
+
+        <TextBlock FontSize="20"
+                   x:Name="textBlockCity"/>
+        <RadioButton GroupName="radioGroupCities"
+                     Content="Moscow"
+                     FontSize="30"
+                     Checked="RadioButton_Checked"/>
+        <RadioButton GroupName="radioGroupCities"
+                     Content="Kazan"
+                     FontSize="30"
+                     Checked="RadioButton_Checked"/>
+        <RadioButton GroupName="radioGroupCities"
+                     Content="Tula"
+                     FontSize="30"
+                     Checked="RadioButton_Checked"/>
+
+        <TextBlock FontSize="20"
+                   x:Name="textBlockLang"/>
+        <RadioButton GroupName="radioGroupLangs"
+                     Content="Russian"
+                     FontSize="30"
+                     Checked="RadioButton_Checked_1"/>
+        <RadioButton GroupName="radioGroupLangs"
+                     Content="English"
+                     FontSize="30"
+                     Checked="RadioButton_Checked_1"/>
+        <RadioButton GroupName="radioGroupLangs"
+                     Content="German"
+                     FontSize="30"
+                     Checked="RadioButton_Checked_1"/>
+    </StackPanel>
+</Window>
