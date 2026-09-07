@@ -7,42 +7,115 @@
         xmlns:local="clr-namespace:WpfItemsControlsApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <ListBox FontSize="12">
-            <ListBoxItem>Item One</ListBoxItem>
-            Item Two
-            <ListViewItem>Three</ListViewItem>
-            <sys:String>Fore</sys:String>
-        </ListBox>
 
-        <TextBlock x:Name="textBlockName"
-                   FontSize="24"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <ListBox FontSize="12">
+                <ListBoxItem>Item One</ListBoxItem>
+                Item Two
+                <ListViewItem>Three</ListViewItem>
+                <sys:String>Fore</sys:String>
+            </ListBox>
+
+            <TextBlock x:Name="textBlockName"
+               FontSize="24"/>
+
+            <ListBox x:Name="listBoxEmployees"
+             FontSize="24"
+             DisplayMemberPath="Name"
+             SelectionMode="Extended"
+             SelectionChanged="listBoxEmployees_SelectionChanged"/>
+
+            <ListBox SelectionChanged="ListBox_SelectionChanged">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/logo-aeroflot-01.png" Width="50" />
+                    <TextBlock Text="Aeroflot" FontSize="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/logo-pobeda-01.png" Width="50" />
+                    <TextBlock Text="Pobeda" FontSize="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/logo-s7-01.png" Width="50" />
+                    <TextBlock Text="S7" FontSize="30" />
+                </StackPanel>
+            </ListBox>
+
+            <ComboBox x:Name="comboBoxCountries"
+              FontSize="24"
+              IsEditable="True"/>
+
+            <Button x:Name="buttonAddTommy"
+            Click="buttonAddTommy_Click"
+            Content="Add Tommy"
+            FontSize="24"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <ListView x:Name="listViewProducts">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">
+                            <GridViewColumnHeader Click="GridViewColumnHeader_Click">
+                                Title
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Brand}">Brand</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <DataGrid x:Name="dataGridProducts" />
+
+            <TabControl>
+                <TabItem>
+                    <TabItem.Header>
+                        Tab 1
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Button>Button 1</Button>
+                            <Button>Button 2</Button>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Tab 2
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Button>Button 10</Button>
+                            <Button>Button 20</Button>
+                            <Button>Button 30</Button>
+                            <Button>Button 40</Button>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+
+            <DatePicker />
+            <Calendar />
+            <TreeView>
+                <TreeViewItem Header="Level 0">
+                    <TreeViewItem Header="Level 1" />
+                    <TreeViewItem Header="Level 1" />
+                </TreeViewItem>
+
+                <TreeViewItem Header="Level 0" />
+            </TreeView>
+        </StackPanel>
+
         
-        <ListBox x:Name="listBoxEmployees"
-                 FontSize="24"
-                 DisplayMemberPath="Name"
-                 SelectionMode="Extended"
-                 SelectionChanged="listBoxEmployees_SelectionChanged"/>
-
-        <ListBox>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/logo-aeroflot-01.png" Width="50" />
-                <TextBlock Text="Aeroflot" FontSize="30" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/logo-pobeda-01.png" Width="50" />
-                <TextBlock Text="Pobeda" FontSize="30" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/logo-s7-01.png" Width="50" />
-                <TextBlock Text="S7" FontSize="30" />
-            </StackPanel>
-
-        </ListBox>
-        
-        <Button x:Name="buttonAddTommy"
-                Click="buttonAddTommy_Click"
-                Content="Add Tommy"
-                FontSize="24"/>
-    </StackPanel>
+    </Grid>
+    
+    
 </Window>
+
+    
